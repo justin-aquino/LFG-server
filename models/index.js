@@ -15,4 +15,5 @@ db.on('error', (err)=> {
 })
 
 module.exports.User = require('./user')
+module.exports.Game = require('./game')
 module.exports.Party = require('./party')
