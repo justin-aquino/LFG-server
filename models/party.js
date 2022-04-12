@@ -33,6 +33,10 @@ const partySchema = mongoose.Schema({
   },
   authorId : {
       type: String,
+  },  
+  description : {
+    type: String,
+    maxlength : 320
   },
   members : [membersSchema],
   requests : [requestsSchema]  
