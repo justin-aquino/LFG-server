@@ -6,6 +6,36 @@ const db = require('../models')
 const requiresToken = require('./requiresToken')
 const user = require('../models/user')
 
+
+//GET / -- view all users
+router.get('/', async (req, res)=>{
+  try{
+    const allUsers = await db.User.find()
+
+    res.json(allUsers)
+
+  }catch(err){
+    res.state(503).json({msg: "there are no users"})
+  }
+})
+
+//GET /:id -- view all details about user
+
+router.get('/:id', async (req, res)=>{
+  try{
+
+    const user = await db.User.find({
+      _id: req.params.id
+    })
+
+    res.json(user)
+
+  }catch(err){
+
+  }
+
+})
+
 // POST /users/register -- CREATE a new user
 router.post('/register', async  (req, res) => {
   try {

@@ -1,4 +1,5 @@
 const express = require('express')
+const res = require('express/lib/response')
 const db = require('../models')
 const requiresToken = require('./requiresToken')
 const router = express.Router()
@@ -23,6 +24,16 @@ router.post('/', async (req, res)=>{
         res.status(503).json({msg: "server error"})
     }
 
+})
+
+// View all games
+router.get('/', async (req, res)=>{
+    try{
+        const allgames = await db.Game.find()
+        res.json(allgames)
+    }catch(err){
+        res.status(503).json({msg: "There are no games in the DB"})
+    }
 })
 
 
