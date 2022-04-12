@@ -8,6 +8,8 @@ const cors = require('cors')
 const morgan = require('morgan')
 const PORT = process.env.PORT || 3001
 
+console.log(process.env.JWT_SECRET)
+
 // middlewares
 app.use(cors())
 app.use(express.json())
@@ -26,7 +28,8 @@ app.get('/', (req, res) => {
 })
 
 // controllers
-app.use('/api-v1/users', require('./controllers/api-v1/users'))
+app.use('/users', require('./controllers/users'))
+app.use('/game', require('./controllers/game'))
 
 app.listen(PORT, () => {
   console.log(`Server running on port : ${PORT}`)

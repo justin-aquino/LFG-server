@@ -22,23 +22,19 @@ router.post('/register', async  (req, res) => {
 
     // create a user in th db
     const newUser = await db.User.create({
-      name: req.body.name,
-      games: [],
+      username: req.body.username,
       email: req.body.email,
       password: hashedPassword
-
     })
 
     // create a jwt payload to send back to the client 
     const payload = {
-      name: newUser.name,
+      username: newUser.username,
       email: newUser.email,
       id: newUser.id
     }
-
     // sign the jwt and send it (log them in)
     const token = await jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: 60 * 60 })
-
     res.json({ token })
   } catch (err) {
     console.log(err)
