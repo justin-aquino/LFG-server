@@ -5,34 +5,51 @@ const requiresToken = require('./requiresToken')
 const router = express.Router()
 
 // CREATE A GAME
-router.post('/', async (req, res)=>{
-    try{
+router.post('/', async (req, res) => {
+    try {
 
         const checkGame = await db.Game.findOne({
             name: req.body.name
         })
-     
+
         if (checkGame) return res.status(409).json({ msg: 'That game is already in the database' })
-     
+
         const newGame = await db.Game.create({
             name: req.body.name,
-            image: req.body.image
+            image: req.body.image,
+            icon: req.body.icon,
+            platform: req.body.platform,
+            genre: req.body.genre,
+            developer: req.body.developer,
+            type: req.body.type
         })
 
         res.json(newGame)
-    } catch(err){
-        res.status(503).json({msg: "server error"})
+    } catch (err) {
+        res.status(503).json({ msg: "server error" })
     }
 
 })
 
 // View all games
-router.get('/', async (req, res)=>{
-    try{
+router.get('/', async (req, res) => {
+    try {
         const allgames = await db.Game.find()
         res.json(allgames)
-    }catch(err){
-        res.status(503).json({msg: "There are no games in the DB"})
+    } catch (err) {
+        res.status(503).json({ msg: "There are no games in the DB" })
+    }
+})
+
+// View the specific game
+router.get('/:id', async (req, res) => {
+    try {
+        const foundGame = await db.Game.findOne({
+            _id: req.params.id
+        })
+        res.json(foundGame)
+    } catch (err) {
+        res.status(503).json({ msg: "Ooops, we don't have that game here! " })
     }
 })
 

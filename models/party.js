@@ -32,7 +32,8 @@ const partySchema = mongoose.Schema({
       required : true
   },
   authorId : {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User"
   },  
   description : {
     type: String,
