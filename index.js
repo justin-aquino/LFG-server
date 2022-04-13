@@ -22,7 +22,7 @@ const myMiddleWare = (req, res, next) => {
 // app.use(myMiddleWare) 
 
 app.get('/', (req, res) => {
-  res.json({ msg: 'welcome to the user app 👋' })
+  res.json({ msg: 'LOOKING FOR GROUP!' })
 })
 
 
