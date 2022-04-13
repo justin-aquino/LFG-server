@@ -34,7 +34,7 @@ router.post('/register', async (req, res) => {
   try {
     // check if the user exist already -- dont allow them to sign up again
     const userCheck = await db.User.findOne({
-      email: req.body.email
+      email: req.body.email,
     })
 
     if (userCheck)
@@ -95,7 +95,7 @@ router.post('/login', async (req, res) => {
 
   // create a jwt payload
   const payload = {
-    name: foundUser.name,
+    username: foundUser.username,
     email: foundUser.email,
     id: foundUser.id
   }
