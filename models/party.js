@@ -33,7 +33,7 @@ const partySchema = mongoose.Schema({
       type: String,
       required : true
   },
-  authorId : {
+  authorId : { //changes made by Justin
       type: mongoose.Schema.Types.ObjectId,
       ref: "User"
   },  
