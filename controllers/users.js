@@ -33,16 +33,21 @@ router.get('/:id', async (req, res) => {
 router.post('/register', async (req, res) => {
   try {
     // check if the user exist already -- dont allow them to sign up again
-    const userCheck = await db.User.findOne({
+    const emailCheck = await db.User.findOne({
       email: req.body.email
     })
 
-    if (userCheck)
+    if (emailCheck)
       return res.status(409).json({ msg: 'Email already registered.' })
+    // check if the user exist already -- dont allow them to sign up again
+    const userCheck = await db.User.findOne({
+      username: req.body.username
+    })
 
-    if (userCheck.username == req.body.username) {
-      return res.status(409).json({ msg: 'Username already taken.' })
-    } else {
+    if (userCheck)
+      return res.status(409).json({ msg: 'Username already registered.' })
+      
+  
       // hash the pass (could validate if we wanted)
       const salt = 12
       const hashedPassword = await bcrypt.hash(req.body.password, salt)
@@ -65,7 +70,6 @@ router.post('/register', async (req, res) => {
         expiresIn: 60 * 60
       })
       res.json({ token })
-    }
   } catch (err) {
     console.log(err)
     res.status(503).json({ msg: 'oops server error 503 🔥😭' })
@@ -87,7 +91,6 @@ router.post('/login', async (req, res) => {
     req.body.password,
     foundUser.password
   )
-  console.log(matchPasswords)
 
   // if the provided info does not match -- send back an error message and return
   if (!matchPasswords)
