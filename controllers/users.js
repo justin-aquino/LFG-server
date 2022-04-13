@@ -39,7 +39,7 @@ router.post('/register', async (req, res) => {
 
     if (userCheck)
       return res.status(409).json({ msg: 'Email already registered.' })
-      
+
     if (userCheck.username == req.body.username) {
       return res.status(409).json({ msg: 'Username already taken.' })
     } else {
@@ -75,7 +75,7 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
   // try to find the use in the db that is logging in
   const foundUser = await db.User.findOne({
-    email: req.body.email
+    username: req.body.username
   })
 
   // if the user is not found -- return and send back a message that the user needs to sign up
@@ -95,7 +95,7 @@ router.post('/login', async (req, res) => {
 
   // create a jwt payload
   const payload = {
-    name: foundUser.name,
+    name: foundUser.username,
     email: foundUser.email,
     id: foundUser.id
   }
