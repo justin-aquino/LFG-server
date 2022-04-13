@@ -2,9 +2,7 @@ const mongoose = require('mongoose')
 
 const membersSchema = mongoose.Schema({
     userId : {
-        type: String,
-        required : true,
-        unique : true
+        type: String
     },
     admin : {
         type : Boolean,
@@ -14,9 +12,7 @@ const membersSchema = mongoose.Schema({
 
 const requestsSchema = mongoose.Schema({
     userId : {
-        type: String,
-        required : true,
-        unique : true
+        type: String
     },
     message : {
         type : String,

@@ -15,10 +15,21 @@ router.get('/', async(req,res) =>{
     }            
 })
 
+// List parties with the gameId
+router.get('/:id', async (req, res)=> {
+    try {
+        const findParties = await db.Party.find({ gameId : req.params.id })
+        res.json(findParties)
+    } catch (error) {
+        
+    }
+})
+
 // Create a party
 // TODO : push author id to membersSchema
 router.post('/', async (req, res)=>{
     try {
+        console.log(req.body)
         const partyCreated = await db.Party.create(req.body)        
         await partyCreated.save()
         res.json(partyCreated)
