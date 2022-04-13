@@ -28,25 +28,26 @@ const myMiddleWare = async (req, res, next) => {
       await db.Game.create(games)
     }
     else
-      res.status(403).json({ msg: "Ooopsies! Forbidden jutsu!" })
+      next()
   } catch (error) {
     res.status(503).json({ msg: "Games already exist" })
   }
   next()
 }
 
-
 app.get('/', (req, res) => {
   res.json({ msg: 'welcome to the user app 👋' })
 })
 
+app.get('/seed', myMiddleWare, (req, res) => {
+  res.json({ msg: 'database seeded! Good to go!' })
+})
 
 // controllers
 app.use('/users', require('./controllers/users'))
 app.use('/game', require('./controllers/game'))
 app.use('/party', require('./controllers/party'))
 
-app.use(myMiddleWare)
 
 app.listen(PORT, () => {
   console.log(`Server running on port : ${PORT}`)
