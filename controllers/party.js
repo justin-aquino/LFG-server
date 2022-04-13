@@ -15,23 +15,16 @@ router.get('/', async(req,res) =>{
     }            
 })
 
-// List parties with the gameId
-router.get('/:id', async (req, res)=> {
-    try {
-        const findParties = await db.Party.find({ gameId : req.params.id })
-        res.json(findParties)
-    } catch (error) {
-        
-    }
-})
-
-// Create a party
 // TODO : push author id to membersSchema
+//CREATE NEW PARTY
 router.post('/', async (req, res)=>{
     try {
-        console.log(req.body)
-        const partyCreated = await db.Party.create(req.body)        
-        await partyCreated.save()
+        const partyCreated = await db.Party.create(req.body)
+        console.log(partyCreated)
+        // partyCreated.members.push({
+        //     userId: req.body.authorId,
+        //     admin: req.body.admin
+        // })
         res.json(partyCreated)
     } catch (error) {        
         res.status(503).json({ msg: `An error occured. ${error}` })
