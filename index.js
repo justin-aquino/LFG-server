@@ -37,7 +37,7 @@ const myMiddleWare = async (req, res, next) => {
 
 
 app.get('/', (req, res) => {
-  res.json({ msg: 'welcome to the user app 👋' })
+  res.json({ msg: 'LOOKING FOR GROUP!' })
 })
 
 
