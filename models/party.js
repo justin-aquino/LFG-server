@@ -1,8 +1,5 @@
 const mongoose = require('mongoose')
 
-
-
-
 const membersSchema = mongoose.Schema({
     userId: { //changes made by Justin
         type: mongoose.Schema.Types.ObjectId,

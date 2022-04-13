@@ -14,7 +14,14 @@ router.get('/', async(req,res) =>{
         res.status(503).json({ msg: `An error occured. ${error}` })
     }            
 })
-
+router.get('/:id', async (req, res)=> {
+    try {
+        const findParties = await db.Party.find({ gameId : req.params.id })
+        res.json(findParties)
+    } catch (error) {
+        
+    }
+})
 // TODO : push author id to membersSchema
 //CREATE NEW PARTY
 router.post('/', async (req, res)=>{
