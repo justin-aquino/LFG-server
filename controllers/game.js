@@ -49,7 +49,17 @@ router.get('/:id', async (req, res) => {
         })
         res.json(foundGame)
     } catch (err) {
-        res.status(503).json({ msg: "Ooops, we don't have that game here! " })
+        res.status(503).json({ msg: "Ooops, we don't have that game here! Now, git!" })
+    }
+})
+
+router.put('/:id', async (req, res) => {
+    try {
+        const gameToUpdate = await db.Game.findByIdAndUpdate(req.params.id, req.body)
+        const foundGame = await db.Game.findById(req.params.id)
+        res.json(foundGame)
+    } catch (err) {
+        res.status(503).json({ msg: "What are you doing? Now, git!" })
     }
 })
 

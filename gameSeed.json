@@ -1,0 +1,166 @@
+[
+    {
+        "name": "Valorant",
+        "image": "https://media.wired.com/photos/5ea0840cb0490300086261e3/master/pass/Cul-Reveal_ReactorA_VALORANT.jpg",
+        "icon": "https://c8.alamy.com/zooms/9/6ca261a24190433f90b422fccf54186e/2cbyxtc.jpg",
+        "platform": [
+            "Windows 10, 11"
+        ],
+        "genre": [
+            "First-Person Shooter",
+            "Action"
+        ],
+        "developer": "Riot Games",
+        "type": "Multiplayer"
+    },
+    {
+        "name": "League of Legends",
+        "image": "https://www.dexerto.com/wp-content/uploads/2021/06/22/league-of-legends-new-champion-akshan-the-lost-sentinel-release-date-revealed-630x354.jpg.webp",
+        "icon": "https://www.pentagram.com/work/league-of-legends#31463",
+        "platform": [
+            "Windows 10, 11"
+        ],
+        "genre": [
+            "Multiplayer Online Battle Arena (MOBA)",
+            "Action game",
+            "Real-time strategy",
+            "Action role-playing game"
+        ],
+        "developer": "Riot Games",
+        "type": "Multiplayer"
+    },
+    {
+        "name": "Bro Falls: Ultimate Showdown",
+        "image": "https://cdn.akamai.steamstatic.com/steam/apps/1590320/capsule_616x353.jpg?t=1628000061",
+        "icon": "https://pbs.twimg.com/profile_images/1410686748494024704/5BD8YvYN_400x400.jpg",
+        "platform": [
+            "Windows 10, 11"
+        ],
+        "genre": [
+            "Action Game",
+            "Platform Game"
+        ],
+        "developer": "Boros Bros.",
+        "type": "Multiplayer"
+    },
+    {
+        "name": "Final Fantasy XIV",
+        "image": "https://cdn.akamai.steamstatic.com/steam/apps/39210/capsule_616x353.jpg?t=1638928577",
+        "icon": "https://square-enix-games.com/ffxiv-origami/images/logo.png",
+        "platform": [
+            "Windows",
+            "PlayStation 3",
+            "PlayStation 4",
+            "PlayStation 5",
+            "Xbox One",
+            "macOS"
+        ],
+        "genre": [
+            "Massive Multiplayer Online Role-Playing Game",
+            "Adventure Game",
+            "Action Game"
+        ],
+        "developer": "Square Enix & Findev",
+        "type": "Multiplayer"
+    },
+    {
+        "name": "Don't Starve Together",
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/322330/header.jpg?t=1643303985",
+        "icon": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/46b63d3c-ae67-464c-9a37-670829b2a157/da0ayz9-00b3e1d2-0705-47af-826e-a311a6f71d8a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQ2YjYzZDNjLWFlNjctNDY0Yy05YTM3LTY3MDgyOWIyYTE1N1wvZGEwYXl6OS0wMGIzZTFkMi0wNzA1LTQ3YWYtODI2ZS1hMzExYTZmNzFkOGEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.dvva1cXGGO5BATfM4vINwcan5ObO70NXwV9oBWV8GPE",
+        "platform": [
+            "Windows 10, 11",
+            "Playstation 4",
+            "macOS",
+            "Xbox One"
+        ],
+        "genre": [
+            "Survival Game"
+        ],
+        "developer": "Klei Entertainment",
+        "type": "Multiplayer"
+    },
+    {
+        "name": "World of Warcraft",
+        "image": "https://www.dexerto.com/wp-content/uploads/2022/04/03/Dexerto-Header-1.jpg",
+        "icon": "https://static.wikia.nocookie.net/wowpedia/images/7/7d/WoWlogo.png/revision/latest?cb=20201017225328",
+        "platform": [
+            "Windows",
+            "macOS"
+        ],
+        "genre": [
+            "Massively Multiplayer Online Role-Playing Game",
+            "Fantasy",
+            "Action"
+        ],
+        "developer": "Blizzard Entertainment",
+        "type": "Multiplayer"
+    },
+    {
+        "name": "Phasmophobia",
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/739630/capsule_616x353.jpg?t=1638041534",
+        "icon": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8745ce17-1697-4b0b-af63-1d83aaee08ca/debnwtd-10340a16-e200-4b3c-a8cc-475d528ea8c7.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzg3NDVjZTE3LTE2OTctNGIwYi1hZjYzLTFkODNhYWVlMDhjYVwvZGVibnd0ZC0xMDM0MGExNi1lMjAwLTRiM2MtYThjYy00NzVkNTI4ZWE4YzcucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.TCzB-HOgAhwao-_KAfoQWHqo_eqlEy8APlGFjjGkYpE",
+        "platform": [
+            "Windows 10,11"
+        ],
+        "genre": [
+            "Virtual Reality",
+            "Action Game",
+            "Survival Horror",
+            "Indie Game",
+            "Puzzle"
+        ],
+        "developer": "Kinetic Games",
+        "type": "Single/ Multiplayer"
+    },
+    {
+        "name": "Dota 2",
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/570/capsule_616x353.jpg?t=1645731580",
+        "icon": "https://cdn-icons-png.flaticon.com/512/588/588267.png",
+        "platform": [
+            "Windows",
+            "macOS",
+            "Linux"
+        ],
+        "genre": [
+            "Multiplayer Online Battle Arena",
+            "Action Game"
+        ],
+        "developer": "Valve Corporation",
+        "type": "Multiplayer"
+    },
+    {
+        "name": "Overcooked",
+        "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/448510/capsule_616x353.jpg?t=1643291180",
+        "icon": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c78bc3fc-9f08-47ca-81ae-d89055c7ec49/daz5505-c328b762-c759-4810-b343-1b5cb0fb3e48.png/v1/fill/w_512,h_512,strp/overcooked__icon_by_andonovmarko_daz5505-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6IlwvZlwvYzc4YmMzZmMtOWYwOC00N2NhLTgxYWUtZDg5MDU1YzdlYzQ5XC9kYXo1NTA1LWMzMjhiNzYyLWM3NTktNDgxMC1iMzQzLTFiNWNiMGZiM2U0OC5wbmciLCJ3aWR0aCI6Ijw9NTEyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.eXR6DqpwwoL55-sC_bIaqXNrJcf9KzkYioID-l9ekAg",
+        "platform": [
+            "Windows 10, 11",
+            "Nintendo Switch",
+            "PlayStation 4",
+            "Playstation 5",
+            "Xbox Series X and S"
+        ],
+        "genre": [
+            "Action Game",
+            "Indie Game",
+            "Simulation Video Game",
+            "Casual Game"
+        ],
+        "developer": "Team17, Ghost Town Games",
+        "type": "Multiplayer"
+    },
+    {
+        "name": "Halo: Infinite",
+        "image": "https://assets-prd.ignimgs.com/2020/07/24/halo-infinite-button-2020-1595617876660.jpg",
+        "icon": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/35048f15-2f57-4cd8-841c-f2c3bef9b758/desq2m2-5d02248b-78bc-453d-977a-fe92f4c759d0.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM1MDQ4ZjE1LTJmNTctNGNkOC04NDFjLWYyYzNiZWY5Yjc1OFwvZGVzcTJtMi01ZDAyMjQ4Yi03OGJjLTQ1M2QtOTc3YS1mZTkyZjRjNzU5ZDAucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Bi-T-qOm2ipIwhIACZt9zQw3Yd-iOuqC72ROJI4aKaI",
+        "platform": [
+            "Windows 10, 11",
+            "Xbox One",
+            "Xbox Series X/S"
+        ],
+        "genre": [
+            "First-person Shooter"
+        ],
+        "developer": "343 Industries",
+        "type": "Single/ Multiplayer"
+    }
+]
