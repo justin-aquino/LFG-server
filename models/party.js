@@ -33,8 +33,9 @@ const partySchema = mongoose.Schema({
       type: String,
       required : true
   },
-  authorId : {
-      type: String,
+  authorId : { //changes made by Justin
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User"
   },  
   description : {
     type: String,

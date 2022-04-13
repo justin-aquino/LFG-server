@@ -31,6 +31,7 @@ router.post('/', async (req, res) => {
 
 })
 
+
 // View all games
 router.get('/', async (req, res) => {
     try {
