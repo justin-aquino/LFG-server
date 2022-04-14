@@ -6,14 +6,18 @@ const membersSchema = mongoose.Schema({
         required: true,
         ref: "User",
     },
-    admin : {
-        type : Boolean,
+    admin: {
+        type: Boolean,
         default: false //this will automatically change if you're the creator of party.
-    }
-}, {timestamps: true})
+    },
+    isApproved: {
+        type: Boolean,
+        default: true
+    },
+}, { timestamps: true })
 
 const requestsSchema = mongoose.Schema({
-    userId : {
+    userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     },
@@ -21,32 +25,32 @@ const requestsSchema = mongoose.Schema({
         type: Boolean,
         default: false
     },
-    message : {
-        type : String,
-        maxlength : 160
+    message: {
+        type: String,
+        maxlength: 160
     }
-}, {timestamps: true})
+}, { timestamps: true })
 
 const partySchema = mongoose.Schema({
-  gameId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Game", //references the Game Schema
-    required: true
-  },  
-  partyName: {
-      type: String,
-      required : true
-  },
-//   authorId : { //changes made by Justin
-//       type: mongoose.Schema.Types.ObjectId, //have to use .populate on controller to find the user by id
-//       ref: "User"
-//   },  
-  description : {
-    type: String,
-    maxlength : 320
-  },
-  members : [membersSchema],
-  requests : [requestsSchema] 
-}, {timestamps: true})
+    gameId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Game", //references the Game Schema
+        required: true
+    },
+    partyName: {
+        type: String,
+        required: true
+    },
+    //   authorId : { //changes made by Justin
+    //       type: mongoose.Schema.Types.ObjectId, //have to use .populate on controller to find the user by id
+    //       ref: "User"
+    //   },  
+    description: {
+        type: String,
+        maxlength: 320
+    },
+    members: [membersSchema],
+    requests: [requestsSchema]
+}, { timestamps: true })
 
 module.exports = mongoose.model('Party', partySchema)
