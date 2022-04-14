@@ -30,10 +30,6 @@ router.post('/', async (req, res) => {
     try {
         const partyCreated = await db.Party.create(req.body)
         console.log(partyCreated)
-        // partyCreated.members.push({
-        //     userId: req.body.authorId,
-        //     admin: req.body.admin
-        // })
         res.json(partyCreated)
     } catch (error) {
         res.status(503).json({ msg: `An error occured. ${error}` })
