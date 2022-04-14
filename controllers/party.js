@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
     }
 })
 
+// 
 router.get('/:id', async (req, res)=> {
     try {
         const findParties = await db.Party.find({ gameId : req.params.id })
@@ -23,7 +24,6 @@ router.get('/:id', async (req, res)=> {
         
     }
 })
-
 // TODO : push author id to membersSchema
 //CREATE NEW PARTY
 router.post('/', async (req, res) => {
