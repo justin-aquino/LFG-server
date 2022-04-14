@@ -6,6 +6,10 @@ const membersSchema = mongoose.Schema({
         required: true,
         ref: "User",
     },
+    userName: { //changes made by Jamel
+        type: String,
+        required: true,
+    },
     admin: {
         type: Boolean,
         default: false //this will automatically change if you're the creator of party.
@@ -24,6 +28,10 @@ const requestsSchema = mongoose.Schema({
     isApproved: { //when request is sent, default is false. if false, hide components accessible only to approved members.
         type: Boolean,
         default: false
+    },
+    userName: { //changes made by Jamel
+        type: String,
+        required: true,
     },
     message: {
         type: String,
