@@ -14,23 +14,10 @@ router.get('/', async (req, res) => {
         res.status(503).json({ msg: `An error occured. ${error}` })
     }
 })
-router.get('/:id', async (req, res)=> {
-    try {
-        const findParties = await db.Party.find({ gameId : req.params.id })
-        res.json(findParties)
-    } catch (error) {
-        
-    }
-})
+
 // TODO : push author id to membersSchema
-<<<<<<< HEAD
-router.post('/', async (req, res) => {
-    try {
-        const partyCreated = await db.Party.create(req.body)
-        await partyCreated.save()
-=======
 //CREATE NEW PARTY
-router.post('/', async (req, res)=>{
+router.post('/', async (req, res) => {
     try {
         const partyCreated = await db.Party.create(req.body)
         console.log(partyCreated)
@@ -38,7 +25,6 @@ router.post('/', async (req, res)=>{
         //     userId: req.body.authorId,
         //     admin: req.body.admin
         // })
->>>>>>> 6b3b485fcc7c34bdff15b1355fa5d5468cc04a8c
         res.json(partyCreated)
     } catch (error) {
         res.status(503).json({ msg: `An error occured. ${error}` })
@@ -72,17 +58,29 @@ router.put('/:id/request', async (req, res) => {
     }
 })
 
+router.get('/:id/request', async (req, res) => {
+    try {
+        const pendingRequests = await db.Party.findById(req.params.id)
+        res.json(pendingRequests)
+    } catch (error) {
+        res.status(503).json({ msg: `An error occured. ${error}` })
+    }
+})
+
 // Approve application to join party  -- will be pushed to membersSchema
 // TODO : delete request once
 router.put('/:id/approve', async (req, res) => {
     try {
-        const newMember = await db.Party.findById(req.params.id)
-        newMember.members.push(req.body)
-        newMember.save()
+        const foundParty = await db.Party.findById(req.params.id)
+        foundParty.members.push(req.body)
+        foundParty.requests.pop(req.body)
+        foundParty.save()
         return res.status(200).json({ msg: 'User approved.' })
     } catch (error) {
         res.status(503).json({ msg: `An error occured. ${error} ${req.params.id}` })
     }
 })
+
+
 
 module.exports = router
