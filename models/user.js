@@ -8,7 +8,9 @@ const User_game = mongoose.Schema({
 })
 
 const Joined_party = mongoose.Schema({
-  party_fk: String,   // obect ID of associated party
+  party_fk: String,   // changed by ajmel
+  partyName: String,  // changed by jamel
+  partyDescription: String   // changed by jamel
 })
 
 const UserSchema = mongoose.Schema({
@@ -16,7 +18,7 @@ const UserSchema = mongoose.Schema({
   email: String,
   games: [User_game],
   parties: [Joined_party],
-  
+
   password: String
 })
 
