@@ -31,18 +31,15 @@ router.post('/', async (req, res) => {
         const foundUser = await db.User.findById(
             req.body.members[0].userId
         )
-        // const foundUser = await db.User.findById(
-        //     req.body.members[0].userId
-        // )
-
         foundUser.parties.push({
             party_fk: partyCreated._id,
+
             partyName: partyCreated.partyName,
             partyDescription: partyCreated.description
         })
-
         await foundUser.save()
-        res.json(partyCreated)
+        res.json(partyCreated, foundUser)
+
     } catch (error) {
         res.status(503).json({ msg: `An error occured. ${error}` })
     }
