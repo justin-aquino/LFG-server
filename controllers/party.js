@@ -31,8 +31,6 @@ router.post('/', async (req, res) => {
         const foundUser = await db.User.findById(
             req.body.userId
         )
-        console.log(foundUser)
-        console.log(partyCreated)
 
         foundUser.parties.push({
             party_fk : partyCreated._id
