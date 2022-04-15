@@ -75,6 +75,44 @@ router.post('/register', async (req, res) => {
     res.status(503).json({ msg: 'oops server error 503 🔥😭' })
   }
 })
+
+// Add a game username to profile
+router.put('/edit', async (req,res)=>{
+try{
+
+  if(req.body.username == "" || req.body.game_fk == ""){
+    return res.status(503).json({ msg: 'input a username and/or game' })
+  }
+  if(!req.body.id){
+    return res.status(503).json({ msg: 'no one is logged in' })
+  }
+  const foundUser = await db.User.findOne({
+    _id: req.body.id
+  })
+  const gamesUpdate = await db.User.findByIdAndUpdate(
+    req.body.id,
+    {
+      games:[
+        {
+          game_fk: req.body.game_fk,
+          gameName: req.body.gameName,
+          username: req.body.username
+        }
+      ]
+    }
+)
+
+
+  await gamesUpdate.save()
+
+  res.json({foundUser})
+} catch(err){
+  console.log(err)
+}
+
+
+
+})
 // POST /users/login -- validate login credentials
 router.post('/login', async (req, res) => {
   // try to find the use in the db that is logging in
@@ -100,7 +138,8 @@ router.post('/login', async (req, res) => {
   const payload = {
     username: foundUser.username,
     email: foundUser.email,
-    id: foundUser.id
+    id: foundUser.id,
+    games: foundUser.games
   }
 
   // sign the jwt
