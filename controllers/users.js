@@ -63,7 +63,8 @@ router.post('/register', async (req, res) => {
         username: newUser.username,
         email: newUser.email,
         id: newUser.id,
-        parties: newUser.parties
+        parties: newUser.parties,
+        games: newUser.games
       }
       // sign the jwt and send it (log them in)
       const token = await jwt.sign(payload, process.env.JWT_SECRET, {
