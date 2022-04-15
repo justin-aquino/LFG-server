@@ -24,7 +24,6 @@ router.get('/:id', async (req, res) => {
     const user = await db.User.find({
       _id: req.params.id
     })
-
     res.json(user)
   } catch (err) {}
 })
