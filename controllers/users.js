@@ -120,8 +120,6 @@ try{
   console.log(err)
 }
 
-
-
 })
 // POST /users/login -- validate login credentials
 router.post('/login', async (req, res) => {
