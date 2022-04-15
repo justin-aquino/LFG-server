@@ -47,6 +47,7 @@ app.get('/seed', myMiddleWare, (req, res) => {
 app.use('/users', require('./controllers/users'))
 app.use('/game', require('./controllers/game'))
 app.use('/party', require('./controllers/party'))
+app.use('/board', require('./controllers/messages'))
 
 
 app.listen(PORT, () => {
