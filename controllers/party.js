@@ -54,8 +54,8 @@ router.put('/:id/request', async (req, res) => {
     try {
         const newRequest = await db.Party.findById(req.params.id)
         newRequest.requests.push(req.body)
-        newRequest.save()
-        return res.status(200).json({ msg: 'Request submitted.' })
+        newRequest.save()        
+        return res.json({newRequest,msg : 'Request submitted.'})
     } catch (error) {
         res.status(503).json({ msg: `An error occured. ${error}` })
     }
@@ -81,22 +81,23 @@ router.put('/:id/approve', async (req, res) => {
                 foundParty.requests.splice(prop, 1)
         }
         foundParty.save()
-        return res.status(200).json({ msg: 'User approved.' })
+        return res.json({foundParty, msg: 'User approved.' })
     } catch (error) {
-        res.status(503).json({ msg: `An error occured. ${error} ${req.params.id}` })
+        res.status(503).json({ msg: `An error occured. ${error}` })
     }
 })
 
-router.put('/:id/decline', async (req, res) => {
+router.put('/:id/decline', async (req, res) => {    
     try {
         const foundParty = await db.Party.findById(req.params.id)
-        for (const prop in foundParty.requests) {
+        for (const prop in foundParty.requests) {            
             if (foundParty.requests[prop]._id == req.body._id)
                 foundParty.requests.splice(prop, 1)
         }
         foundParty.save()
-        return res.status(200).json({ msg: 'User declined.' })
+        return res.json({foundParty, msg: 'User declined.' })
     } catch (error) {
+        console.log(error)
         res.status(503).json({ msg: `An error occured. ${error} ${req.params.id}` })
     }
 })
