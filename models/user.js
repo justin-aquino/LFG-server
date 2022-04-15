@@ -18,7 +18,7 @@ const UserSchema = mongoose.Schema({
   email: String,
   games: [User_game],
   parties: [Joined_party],
-  
+
   password: String
 })
 
