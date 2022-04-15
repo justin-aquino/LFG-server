@@ -24,7 +24,6 @@ router.get('/:id', async (req, res) => {
     const user = await db.User.find({
       _id: req.params.id
     })
-
     res.json(user)
   } catch (err) {}
 })
@@ -89,28 +88,37 @@ try{
   const foundUser = await db.User.findOne({
     _id: req.body.id
   })
-  const gamesUpdate = await db.User.findByIdAndUpdate(
-    req.body.id,
-    {
-      games:[
-        {
-          game_fk: req.body.game_fk,
-          gameName: req.body.gameName,
-          username: req.body.username
-        }
-      ]
+  const foundUserIndex = foundUser.games.findIndex((elem, idx)=>{
+    return elem.game_fk === req.body.game_fk
+  })
+  console.log(foundUserIndex)
+  if(foundUserIndex == -1){
+
+
+    foundUser.games.push({
+      game_fk: req.body.game_fk,
+      username: req.body.username,
+      gameName: req.body.gameName
+    })
+    await foundUser.save()
+
+    res.json({foundUser})
+
+  } else {
+
+    foundUser.games[foundUserIndex] = {
+      game_fk: req.body.game_fk,
+      username: req.body.username,
+      gameName: req.body.gameName
     }
-)
-
-
-  await gamesUpdate.save()
-
-  res.json({foundUser})
+      
+      await foundUser.save()
+      
+      res.json({foundUser})
+    }
 } catch(err){
   console.log(err)
 }
-
-
 
 })
 // POST /users/login -- validate login credentials
