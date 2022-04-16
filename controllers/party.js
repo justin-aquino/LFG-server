@@ -37,10 +37,15 @@ router.post('/', async (req, res) => {
             partyName: partyCreated.partyName,
             partyDescription: partyCreated.description
         })
+        const setMessageBoard = await db.MessageBoard.create({
+            partyId : partyCreated._id
+        })
+        
         await foundUser.save()
-        res.json(partyCreated, foundUser)
+        res.json({partyCreated, foundUser})
 
     } catch (error) {
+        console.log(error)
         res.status(503).json({ msg: `An error occured. ${error}` })
     }
 })

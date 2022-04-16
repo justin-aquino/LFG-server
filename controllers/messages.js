@@ -5,7 +5,7 @@ const db = require('../models')
 
 router.get('/:id', async (req, res) => {
     try {
-        const msgRes = await db.MessageBoard.findById(req.params.id)
+        const msgRes = await db.MessageBoard.find({partyId : req.params.id})
         res.json(msgRes)
     } catch (error) {
         console.table(error)
@@ -17,12 +17,14 @@ router.post('/', async (req, res) => {
         const msgRes = await db.MessageBoard.create(req.body)        
         res.json(msgRes)
     } catch (error) {
+        console.log(error)
         res.status(503).json({ msg: `An error occured. ${error}` })
     }
 })
 router.put('/:id', async (req,res)=> {
     try {
-        const msgRes = await db.MessageBoard.findById(req.params.id)
+        
+        const msgRes = await db.MessageBoard.findById(req.params.id)        
         msgRes.messages.push(req.body)
         msgRes.save()
         res.json({msgRes, msg: 'Message inserted.'})
