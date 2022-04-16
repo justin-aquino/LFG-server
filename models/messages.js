@@ -3,8 +3,11 @@ const mongoose = require('mongoose')
 
 const messageSchema = mongoose.Schema({
     userId : {
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: "User"        
+    },
+    userName : {
+        type : String
     },
     message: {
         type: String                
@@ -16,7 +19,7 @@ const messageSchema = mongoose.Schema({
 
 const partyBoardSchema = mongoose.Schema({
     partyId : {
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: "Party", 
         required: true
     },
