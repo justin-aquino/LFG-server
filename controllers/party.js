@@ -33,23 +33,20 @@ router.post('/', async (req, res) => {
         )
         foundUser.parties.push({
             party_fk: partyCreated._id,
-
+            gameName: req.body.gameName,
             partyName: partyCreated.partyName,
             partyDescription: partyCreated.description
         })
         const setMessageBoard = await db.MessageBoard.create({
             partyId : partyCreated._id
-        })
-        
+        })        
         await foundUser.save()
         res.json({partyCreated, foundUser})
-
     } catch (error) {
         console.log(error)
         res.status(503).json({ msg: `An error occured. ${error}` })
     }
 })
-
 
 // Update party
 router.put('/:id', async (req, res) => {
